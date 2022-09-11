@@ -74,11 +74,13 @@ class Authcontroller{
         res.cookie('refreshtoken',refreshToken,{
             maxAge:1000*60*60*24*30,
             httpOnly:true,
+            domain:'.https://main--tourmaline-dusk-542b1c.netlify.app',
             secure:true,
         })
         res.cookie('accesstoken',accessToken,{
             maxAge:1000*60*60*24*30,
             httpOnly:true,
+            domain:'.https://main--tourmaline-dusk-542b1c.netlify.app',
             secure:true,
         })
         const User=new User_dtos(user);
@@ -128,11 +130,13 @@ class Authcontroller{
         res.cookie('refreshtoken',reftoken,{
             maxAge:1000*60*60*24*30,
             httpOnly:true,
+            domain:'.https://main--tourmaline-dusk-542b1c.netlify.app',
             secure:true,
         })
         res.cookie('accesstoken',acctoken,{
             maxAge:1000*60*60*24*30,
             httpOnly:true,
+            domain:'.https://main--tourmaline-dusk-542b1c.netlify.app',
             secure:true,
         })
         const User=new User_dtos(user);
