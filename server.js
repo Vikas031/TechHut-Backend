@@ -26,7 +26,7 @@ const io=require('socket.io')(server,{
 });
 
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: process.env.FRONT_URL));
+app.use(cors({credentials: true, origin: process.env.FRONT_URL}));
 
 app.use('/storage',express.static('storage'));
 
