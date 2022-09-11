@@ -10,7 +10,7 @@ const server=require('http').createServer(app);
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "https://631dbd1c9e1ad208eaa7afc7--tourmaline-dusk-542b1c.netlify.app");
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"
