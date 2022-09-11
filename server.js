@@ -10,7 +10,7 @@ const server=require('http').createServer(app);
 
 // Add Access Control Allow Origin headers
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://tourmaline-dusk-542b1c.netlify.app");
+    res.setHeader("Access-Control-Allow-Origin", "https://main--tourmaline-dusk-542b1c.netlify.app");
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"
@@ -20,13 +20,13 @@ app.use((req, res, next) => {
 
 const io=require('socket.io')(server,{
     cors:{
-        origin:'https://tourmaline-dusk-542b1c.netlify.app',
+        origin:'https://main--tourmaline-dusk-542b1c.netlify.app',
         methods:['GET','POST'],
     }
 });
 
 app.use(cookieParser());
-app.use(cors({credentials: true, origin: 'https://tourmaline-dusk-542b1c.netlify.app'}));
+app.use(cors({credentials: true, origin: 'https://main--tourmaline-dusk-542b1c.netlify.app'}));
 
 app.use('/storage',express.static('storage'));
 
