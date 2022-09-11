@@ -8,6 +8,16 @@ const cookieParser=require('cookie-parser');
 const ACTIONS=require('./actions');
 const server=require('http').createServer(app);
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
 const io=require('socket.io')(server,{
     cors:{
         origin:'http://localhost:3000',
