@@ -20,18 +20,13 @@ app.use((req, res, next) => {
 
 const io=require('socket.io')(server,{
     cors:{
-        origin:'http://localhost:3000',
+        origin:'https://631dbd1c9e1ad208eaa7afc7--tourmaline-dusk-542b1c.netlify.app',
         methods:['GET','POST'],
     }
 });
 
-
-
 app.use(cookieParser());
-app.use(cors({
-    credentials:true, 
-    origin:['http://localhost:3000']
-}))
+
 app.use('/storage',express.static('storage'));
 
 const PORT=process.env.PORT||5500;
