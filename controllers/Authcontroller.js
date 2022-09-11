@@ -73,14 +73,13 @@ class Authcontroller{
         await tokenService.storeRefreshTokens(refreshToken,user._id);
         res.cookie('refreshtoken',refreshToken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true,
             sameSite: 'none',
-           
+            secure:true,
         })
         res.cookie('accesstoken',accessToken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true,
             sameSite: 'none',
+            secure:true,
         })
         const User=new User_dtos(user);
         return res.json({auth:true,user:User})
@@ -128,15 +127,13 @@ class Authcontroller{
         //put it in cookie
         res.cookie('refreshtoken',reftoken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true,
             sameSite: 'none',
-            
+            secure:true,
         })
         res.cookie('accesstoken',acctoken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true,
             sameSite: 'none',
-          
+            secure:true,
         })
         const User=new User_dtos(user);
         res.json({auth:true,user:User})
